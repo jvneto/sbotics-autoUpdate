@@ -1,31 +1,20 @@
 {
-  "name": "sbotics-autoupdate",
+  "name": "sbotics_auto_updater",
   "version": "1.0.0",
-  "description": "Automatic update algorithm for sBotics applications",
-  "main": "main.js",
+  "main": "index.js",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
     "build-win": "electron-builder build --win --ia32 --publish never",
-    "deploy-win": "electron-builder build --win --ia32 --publish always",
+    "deploy-win": "electron-builder build --win --ia32 --publish onTagOrDraft",
     "build-mac": "electron-builder build --mac --publish never",
     "deploy-mac": "electron-builder build --mac --publish onTagOrDraft",
     "build-linux": "electron-builder build --linux --publish never",
-    "deploy-linux": "electron-builder build --linux --x64 --publish onTagOrDraft"
+    "deploy-linux": "electron-builder build --linux --x64 --publish always"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jvneto/sbotics-autoUpdate.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jvneto/sbotics-autoUpdate/issues"
-  },
-  "homepage": "https://github.com/jvneto/sbotics-autoUpdate#readme",
   "build": {
     "asar": true,
-    "productName": "sBotics AutoUpdate",
+    "productName": "sbotics auto updater",
     "win": {
       "icon": "./icons/icon.ico"
     },
@@ -38,11 +27,15 @@
       "target": "default"
     }
   },
-  "devDependencies": {
-    "electron": "^13.0.1",
-    "electron-builder": "^22.10.5"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jvneto/sbotics-autoUpdate.git"
   },
   "dependencies": {
     "electron-updater": "^4.3.9"
+  },
+  "devDependencies": {
+    "electron": "^13.0.1",
+    "electron-builder": "^22.10.5"
   }
 }
