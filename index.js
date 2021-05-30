@@ -27,6 +27,9 @@ app.on('window-all-closed', function () {
 
 app.on('ready', function(){
   autoUpdater.checkForUpdates();
+
+ console.log(appUpdater.checkForUpdates());
+
 })
 
 autoUpdater.on('checking-for-update', () => {
